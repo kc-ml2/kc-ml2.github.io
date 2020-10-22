@@ -1,0 +1,272 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Extensive-Form Games — MARL</title>
+    <meta charset="utf-8">
+    <meta name="description" content="RL_Tutorial">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Extensive-Form Games — Vue.js">
+    <meta property="og:description" content="RL_Tutorial">
+    <meta property="og:image" content="https://vuejs.org//images/logo2.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Extensive-Form Games — Vue.js">
+    <meta name="twitter:description" content="RL_Tutorial">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+ <!--
+    <link rel="apple-touch-icon" sizes="57x25" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x26" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x32" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x33" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x50" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x53" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x63" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x67" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x79" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x84"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x14" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x42" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x7" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+  -->
+    <link rel="icon" type="image/png" size="16x7" href="/images/logo2.png" >
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "3.2"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="RL_Tutorial" type="application/atom+xml">
+</head>
+  <body class="docs">    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo2.png" alt="ML2">
+    <span>MARL</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+
+    <li><h4>1.Introduction</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/1.1/" class="nav-link">1.1 Game theory and Reinforcement Learning</a></li>
+        <li><a href="/v2/1.2/" class="nav-link">1.2 Known environments in terms of MARL</a></li>
+      </ul>
+    </li>
+
+    <li><h4>2.Snake Game</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/2.1/" class="nav-link">2.1 Snake game as MARL env</a></li>
+        <li><a href="/v2/2.2/" class="nav-link">2.2 Previous approaches</a></li>
+      </ul>
+    </li>
+
+    <li><h4>3.MARL background</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/3.1/" class="nav-link">3.1 Markov games (MGs)</a></li>
+        <li><a href="/v2/3.2/" class="nav-link current">3.2 Extensive-Form Games</a></li>
+        <li><a href="/v2/3.3/" class="nav-link current">3.3 Cooperative vs. Competitive vs. Mixed</a></li>
+      </ul>
+    </li>
+
+    <li><h4>4.Applying MARL algorithms</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/4.1/" class="nav-link">4.1 Well-known MARL algorithms</a></li>
+        <li><a href="/v2/4.2/" class="nav-link">4.2 Competitive characteristics</a></li>
+      </ul>
+    </li>
+
+    <li><h4>5.Leaderboard</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/5/" class="nav-link">Introduce the Leaderboard and how to use</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li>
+  <a href="https://www.kc-ml2.com/">리더보드</a>
+</li>
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      
+        <h2>
+          
+          3.2 Extensive-Form Games
+        
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+    <li>
+      <a href="/v2/3.2/index.html" class="sidebar-link current">Extensive-Form Games</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+  <div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Machine Learning Lab</span>
+    <div>
+      <img src="/images/logo.png">
+    </div>
+  </div>
+  <a class="become-backer" href="https://www.kc-ml2.com">
+    ML2 방문하기
+  </a>
+</div>
+
+  
+
+
+<div class="content 3.2 with-sidebar ">
+  
+    
+      
+    
+  
+  
+    <h1>Extensive-Form Games</h1>
+  
+  
+    
+  
+  
+  <div class="footer">
+  
+    튜토리얼 내용을 코드로 확인하고 싶으신가요?
+    <a href="https://github.com/kc-ml2" rel="noopener" target="_blank">
+      Github에서 코드를 확인하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
