@@ -248,11 +248,10 @@
 </div>
 
 <div id="scroll-down">
-  <span class="arrow-down">
-  <!-- css generated icon -->
+  <span class="arrow-down"></span>
   </span>
   <span id="scroll-title">
-    더 많은 설명 보기
+   <a id="green" href="javascript:void(0)" onclick="scrollDown()">더 많은 설명 보기</a>
   </span>
 </div>
 
@@ -285,6 +284,18 @@
   <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a><br>
   Copyright &copy; 2014-2020 Evan You</p>
 </div>
+
+
+<script  type="text/javascript">
+  function scrollDown() {
+
+    if ($('#what').length != 0) {
+      $("html, body").animate({
+        scrollTop: $('#what').offset().top
+      }, 1000);
+    }
+  }
+</script>
 
       </div>
       <script src="/js/smooth-scroll.min.js"></script>
